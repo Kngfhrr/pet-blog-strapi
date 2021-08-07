@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "name": "Location",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "language": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "language"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "location"
+    }
+  }
+}
