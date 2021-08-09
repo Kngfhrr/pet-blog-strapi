@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  pet-blog-backend:
+    build: .
+    restart: always
+    volumes:
+      - ./data:/project/data
+    environment:
+      - VIRTUAL_HOST=api-blog.mypup.io
+      - VIRTUAL_PORT=1337
+    ports:
+      - '3003:1337'
+    networks:
+      mypupio: {}
+networks:
+  mypupio:
+    name: mypupio
