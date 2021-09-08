@@ -5,6 +5,8 @@ services:
     restart: always
     volumes:
       - ./data:/project/data
+      - ./.tmp:/project/.tmp
+      - ./public-data:/project/public
     environment:
       - VIRTUAL_HOST=api-blog.mypup.io
       - VIRTUAL_PORT=1337
